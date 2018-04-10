@@ -1,0 +1,11 @@
+framework module MTGSDKSwift {
+  umbrella header "MTGSDKSwift.h"
+
+  export *
+  module * { export * }
+}
+
+module MTGSDKSwift.Swift {
+    header "MTGSDKSwift-Swift.h"
+    requires objc
+}

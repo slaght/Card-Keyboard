@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C583D150206C4FAA006D61DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C583D14F206C4FAA006D61DC /* Assets.xcassets */; };
+		C583D157206C4FAB006D61DC /* Card Keyboard MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C583D156206C4FAB006D61DC /* Card Keyboard MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C583D15C206C4FAB006D61DC /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C583D15B206C4FAB006D61DC /* Messages.framework */; };
+		C583D15F206C4FAB006D61DC /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C583D15E206C4FAB006D61DC /* MessagesViewController.swift */; };
+		C583D162206C4FAB006D61DC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C583D160206C4FAB006D61DC /* MainInterface.storyboard */; };
+		C583D164206C4FAB006D61DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C583D163206C4FAB006D61DC /* Assets.xcassets */; };
+		C583D170206C69F0006D61DC /* MTGSDKSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C583D16F206C69F0006D61DC /* MTGSDKSwift.framework */; };
+		C583D172206C6DAA006D61DC /* MTGSDKSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C583D16F206C69F0006D61DC /* MTGSDKSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C583D174206C7037006D61DC /* CardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C583D173206C7037006D61DC /* CardViewCell.swift */; };
+		C583D176206C7FE4006D61DC /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C583D175206C7FE4006D61DC /* WaterfallLayout.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C583D158206C4FAB006D61DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C583D146206C4FAA006D61DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C583D155206C4FAB006D61DC;
+			remoteInfo = "Card Keyboard MessagesExtension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C583D16B206C4FAB006D61DC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C583D157206C4FAB006D61DC /* Card Keyboard MessagesExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C583D171206C6D90006D61DC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C583D172206C6DAA006D61DC /* MTGSDKSwift.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C583D14C206C4FAA006D61DC /* Card Keyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Card Keyboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C583D14F206C4FAA006D61DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C583D151206C4FAA006D61DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C583D156206C4FAB006D61DC /* Card Keyboard MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Card Keyboard MessagesExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C583D15B206C4FAB006D61DC /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		C583D15E206C4FAB006D61DC /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		C583D161206C4FAB006D61DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		C583D163206C4FAB006D61DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C583D165206C4FAB006D61DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C583D16F206C69F0006D61DC /* MTGSDKSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MTGSDKSwift.framework; path = Carthage/Build/iOS/MTGSDKSwift.framework; sourceTree = "<group>"; };
+		C583D173206C7037006D61DC /* CardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewCell.swift; sourceTree = "<group>"; };
+		C583D175206C7FE4006D61DC /* WaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WaterfallLayout.swift; path = "../../../Orbits/Occupy Mars/WaterfallLayout.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C583D153206C4FAB006D61DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C583D170206C69F0006D61DC /* MTGSDKSwift.framework in Frameworks */,
+				C583D15C206C4FAB006D61DC /* Messages.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C583D145206C4FAA006D61DC = {
+			isa = PBXGroup;
+			children = (
+				C583D14E206C4FAA006D61DC /* Card Keyboard */,
+				C583D15D206C4FAB006D61DC /* Card Keyboard MessagesExtension */,
+				C583D15A206C4FAB006D61DC /* Frameworks */,
+				C583D14D206C4FAA006D61DC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C583D14D206C4FAA006D61DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C583D14C206C4FAA006D61DC /* Card Keyboard.app */,
+				C583D156206C4FAB006D61DC /* Card Keyboard MessagesExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C583D14E206C4FAA006D61DC /* Card Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				C583D14F206C4FAA006D61DC /* Assets.xcassets */,
+				C583D151206C4FAA006D61DC /* Info.plist */,
+			);
+			path = "Card Keyboard";
+			sourceTree = "<group>";
+		};
+		C583D15A206C4FAB006D61DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C583D16F206C69F0006D61DC /* MTGSDKSwift.framework */,
+				C583D15B206C4FAB006D61DC /* Messages.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C583D15D206C4FAB006D61DC /* Card Keyboard MessagesExtension */ = {
+			isa = PBXGroup;
+			children = (
+				C583D15E206C4FAB006D61DC /* MessagesViewController.swift */,
+				C583D173206C7037006D61DC /* CardViewCell.swift */,
+				C583D175206C7FE4006D61DC /* WaterfallLayout.swift */,
+				C583D160206C4FAB006D61DC /* MainInterface.storyboard */,
+				C583D163206C4FAB006D61DC /* Assets.xcassets */,
+				C583D165206C4FAB006D61DC /* Info.plist */,
+			);
+			path = "Card Keyboard MessagesExtension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C583D14B206C4FAA006D61DC /* Card Keyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C583D16C206C4FAB006D61DC /* Build configuration list for PBXNativeTarget "Card Keyboard" */;
+			buildPhases = (
+				C583D14A206C4FAA006D61DC /* Resources */,
+				C583D16B206C4FAB006D61DC /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C583D159206C4FAB006D61DC /* PBXTargetDependency */,
+			);
+			name = "Card Keyboard";
+			productName = "Card Keyboard";
+			productReference = C583D14C206C4FAA006D61DC /* Card Keyboard.app */;
+			productType = "com.apple.product-type.application.messages";
+		};
+		C583D155206C4FAB006D61DC /* Card Keyboard MessagesExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C583D168206C4FAB006D61DC /* Build configuration list for PBXNativeTarget "Card Keyboard MessagesExtension" */;
+			buildPhases = (
+				C583D152206C4FAB006D61DC /* Sources */,
+				C583D153206C4FAB006D61DC /* Frameworks */,
+				C583D154206C4FAB006D61DC /* Resources */,
+				C583D171206C6D90006D61DC /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Card Keyboard MessagesExtension";
+			productName = "Card Keyboard MessagesExtension";
+			productReference = C583D156206C4FAB006D61DC /* Card Keyboard MessagesExtension.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C583D146206C4FAA006D61DC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Brandon Slaght";
+				TargetAttributes = {
+					C583D14B206C4FAA006D61DC = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					C583D155206C4FAB006D61DC = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C583D149206C4FAA006D61DC /* Build configuration list for PBXProject "Card Keyboard" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C583D145206C4FAA006D61DC;
+			productRefGroup = C583D14D206C4FAA006D61DC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C583D14B206C4FAA006D61DC /* Card Keyboard */,
+				C583D155206C4FAB006D61DC /* Card Keyboard MessagesExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C583D14A206C4FAA006D61DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C583D150206C4FAA006D61DC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C583D154206C4FAB006D61DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C583D164206C4FAB006D61DC /* Assets.xcassets in Resources */,
+				C583D162206C4FAB006D61DC /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C583D152206C4FAB006D61DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C583D174206C7037006D61DC /* CardViewCell.swift in Sources */,
+				C583D176206C7FE4006D61DC /* WaterfallLayout.swift in Sources */,
+				C583D15F206C4FAB006D61DC /* MessagesViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C583D159206C4FAB006D61DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C583D155206C4FAB006D61DC /* Card Keyboard MessagesExtension */;
+			targetProxy = C583D158206C4FAB006D61DC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C583D160206C4FAB006D61DC /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C583D161206C4FAB006D61DC /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C583D166206C4FAB006D61DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C583D167206C4FAB006D61DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C583D169206C4FAB006D61DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 98PHYR992B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "Card Keyboard MessagesExtension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "bslaght.Card-Keyboard.MessagesExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C583D16A206C4FAB006D61DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 98PHYR992B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "Card Keyboard MessagesExtension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "bslaght.Card-Keyboard.MessagesExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C583D16D206C4FAB006D61DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 98PHYR992B;
+				INFOPLIST_FILE = "Card Keyboard/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "bslaght.Card-Keyboard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C583D16E206C4FAB006D61DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 98PHYR992B;
+				INFOPLIST_FILE = "Card Keyboard/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "bslaght.Card-Keyboard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C583D149206C4FAA006D61DC /* Build configuration list for PBXProject "Card Keyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C583D166206C4FAB006D61DC /* Debug */,
+				C583D167206C4FAB006D61DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C583D168206C4FAB006D61DC /* Build configuration list for PBXNativeTarget "Card Keyboard MessagesExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C583D169206C4FAB006D61DC /* Debug */,
+				C583D16A206C4FAB006D61DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C583D16C206C4FAB006D61DC /* Build configuration list for PBXNativeTarget "Card Keyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C583D16D206C4FAB006D61DC /* Debug */,
+				C583D16E206C4FAB006D61DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C583D146206C4FAA006D61DC /* Project object */;
+}
