@@ -30,6 +30,11 @@ class CardViewCell: UICollectionViewCell {
         imageView.setNeedsLayout()
         errorLabel.isHidden = true
         spinner.isHidden = false
+
+        DispatchQueue.main.async {
+            self.spinner.startAnimating()
+        }
+        
         guard let urlString = card.imageUrl else {
             handleNoImage(error: card.name!)
             return
@@ -53,7 +58,15 @@ class CardViewCell: UICollectionViewCell {
                 return
             }
             DispatchQueue.main.async {
-                self.imageView.image = UIImage(data: data!)
+                UIView.transition(with: self.imageView,
+                                  duration:0.5,
+                                  options: .transitionCrossDissolve,
+                                  animations: { self.imageView.image = UIImage(data: data!) },
+                                  completion: nil)
+                
+//                UIView.animate(withDuration: 0.5, animations: {
+//                    self.imageView.image = UIImage(data: data!)
+//                })
             }
         }.resume()
     }

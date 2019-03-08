@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4p8-2H-5dW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4p8-2H-5dW">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,12 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="9ZL-fG-Xd8">
+                            <searchBar contentMode="redraw" placeholder="Search Cards" translatesAutoresizingMaskIntoConstraints="NO" id="9ZL-fG-Xd8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="K4V-lE-kxl">
-                                <rect key="frame" x="2" y="58" width="371" height="607"/>
+                                <rect key="frame" x="2" y="58" width="371" height="609"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="GOI-9f-sDQ">
                                     <size key="itemSize" width="120" height="180"/>
@@ -40,7 +40,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7q-J2-CiF">
-                                                    <rect key="frame" x="60" y="89.5" width="0.0" height="0.0"/>
+                                                    <rect key="frame" x="60" y="90" width="0.0" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -80,7 +80,7 @@
                         <constraints>
                             <constraint firstItem="9ZL-fG-Xd8" firstAttribute="leading" secondItem="cC3-jR-yts" secondAttribute="leading" id="1eh-Gh-D9C"/>
                             <constraint firstItem="9ZL-fG-Xd8" firstAttribute="trailing" secondItem="cC3-jR-yts" secondAttribute="trailing" id="7AQ-cP-UFJ"/>
-                            <constraint firstItem="K4V-lE-kxl" firstAttribute="bottom" secondItem="cC3-jR-yts" secondAttribute="bottom" constant="-2" id="GJG-8l-q0K"/>
+                            <constraint firstItem="K4V-lE-kxl" firstAttribute="bottom" secondItem="XZX-8c-INJ" secondAttribute="bottom" id="GJG-8l-q0K"/>
                             <constraint firstItem="K4V-lE-kxl" firstAttribute="top" secondItem="9ZL-fG-Xd8" secondAttribute="bottom" constant="2" id="GfP-s3-EUq"/>
                             <constraint firstItem="9ZL-fG-Xd8" firstAttribute="top" secondItem="XZX-8c-INJ" secondAttribute="top" id="LUR-gW-s55"/>
                             <constraint firstItem="K4V-lE-kxl" firstAttribute="trailing" secondItem="cC3-jR-yts" secondAttribute="trailing" constant="-2" id="iii-Mv-TQQ"/>

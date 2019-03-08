@@ -1,3 +1,10 @@
+//ISSUES:
+//crashes when keyboard is out sometimes?
+//when sideways, area next to notch is clear (happens with others)
+//weird dismiss behavior when sideways (happens with others)
+//images flicker when scrolled fast
+//no image for the app
+//no loading spinner in the main part when actually loading
 
 import UIKit
 import Messages
@@ -12,13 +19,14 @@ class MessagesViewController: MSMessagesAppViewController,  UICollectionViewData
     let magic = Magic()
     var defaultCards = [Card]()
     var filteredCards = [Card]()
+    var allSets = [CardSet]()
     
     var searchActive = false
     
     override func viewDidLoad() {
         cardCollectionView.delegate = self
         cardCollectionView.dataSource = self
-        magic.fetchPageSize = "100"
+        magic.fetchPageSize = "900"
         getDefaultCards()
         setupCollectionView()
         setupSearchView()
@@ -49,17 +57,42 @@ class MessagesViewController: MSMessagesAppViewController,  UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! CardViewCell
+        requestPresentationStyle(.compact)
         prepareText(cell: cell)
     }
     
     func getDefaultCards() {
         showLoadingSpinner()
-        magic.generateBoosterForSet("AER", completion: { (cards, error) in
-            self.hideLoadingSpinnerAsync()
-            
-            self.defaultCards = self.handleAPIData(error: error, cards: cards)
-            self.reloadTableAsync()
+        let name = SetSearchParameter(parameterType: .name, value: "")
+        magic.fetchSets([name], completion: { (sets, error) in
+            self.allSets = self.handleAPIData(error: error, sets: sets)
+            print(self.allSets)
+            let currentSet = self.getMostRecentSet(sets: self.allSets)
+            print(currentSet)
+            self.magic.generateBoosterForSet(currentSet, completion: { (cards, error) in
+                self.hideLoadingSpinnerAsync()
+                self.defaultCards = self.handleAPIData(error: error, cards: cards)
+                self.reloadTableAsync()
+            })
         })
+    }
+    
+    func getMostRecentSet(sets: [CardSet]) -> String {
+        var expansionSetsWithDates = [CardSet]()
+        for set in sets {
+            if(set.releaseDate != nil && set.type == "expansion") {
+                expansionSetsWithDates.append(set)
+            }
+        }
+        
+        print(expansionSetsWithDates)
+        
+        if(expansionSetsWithDates.isEmpty) {
+            return "KTK";
+        }
+        
+        let sortedSets = expansionSetsWithDates.sorted { $0.releaseDate! > $1.releaseDate! }
+        return sortedSets[0].code!
     }
     
     func showLoadingSpinner() {
@@ -81,7 +114,31 @@ class MessagesViewController: MSMessagesAppViewController,  UICollectionViewData
             self.handleLoadingError()
             return [Card]()
         }
-        return unwrappedCards
+        var completeCards = [Card]()
+        for card in unwrappedCards {
+            if card.imageUrl != nil {
+                completeCards.append(card)
+            }
+        }
+        return completeCards
+    }
+    
+    func handleAPIData(error bundle: Error?, sets setArray: [CardSet]?) -> [CardSet] {
+        if let error = bundle {
+            print(error)
+            return [CardSet]()
+        }
+        guard let unwrappedSets = setArray else {
+            self.handleLoadingError()
+            return [CardSet]()
+        }
+        var completeSets = [CardSet]()
+        for set in unwrappedSets {
+            if set.releaseDate != nil {
+                completeSets.append(set)
+            }
+        }
+        return completeSets
     }
     
     func reloadTableAsync() {
@@ -95,8 +152,8 @@ class MessagesViewController: MSMessagesAppViewController,  UICollectionViewData
     func setupSearchView() {
         searchBar.delegate = self
         let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: Notification.Name.UIKeyboardDidShow, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardDidShowNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     func setupCollectionView(){
@@ -104,24 +161,31 @@ class MessagesViewController: MSMessagesAppViewController,  UICollectionViewData
         layout.minimumColumnSpacing = 2.0
         layout.minimumInteritemSpacing = 2.0
         layout.columnCount = 3
-        cardCollectionView.autoresizingMask = [UIViewAutoresizing.flexibleHeight, UIViewAutoresizing.flexibleWidth]
+        cardCollectionView.autoresizingMask = [UIView.AutoresizingMask.flexibleHeight, UIView.AutoresizingMask.flexibleWidth]
         cardCollectionView.alwaysBounceVertical = true
         cardCollectionView.collectionViewLayout = layout
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        //searchActive = true;
+        searchBar.becomeFirstResponder()
+        requestPresentationStyle(.expanded)
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        searchBar.endEditing(true)
         //searchActive = false;
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        searchBar.endEditing(true)
         //searchActive = false;
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        searchBar.endEditing(true)
         //searchActive = false;
     }
     
@@ -138,11 +202,11 @@ class MessagesViewController: MSMessagesAppViewController,  UICollectionViewData
     
     @objc func adjustForKeyboard(notification: Notification) {
         // Step 1: Get the size of the keyboard.
-        let keyboardSize = (notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue.size
+        let keyboardSize = (notification.userInfo![UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue.size
         let toolbarSize = cardCollectionView.convert(cardCollectionView.bounds, to: nil)
 
         // Step 2: Adjust the bottom content inset of your scroll view by the keyboard height.
-        let contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height - toolbarSize.minY + 14, 0.0)
+        let contentInsets = UIEdgeInsets.init(top: 0.0, left: 0.0, bottom: keyboardSize.height - toolbarSize.minY + 14, right: 0.0)
         cardCollectionView.contentInset = contentInsets;
         cardCollectionView.scrollIndicatorInsets = contentInsets;
     }
