@@ -71,9 +71,8 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="rMZ-vY-nfL">
-                                <rect key="frame" x="339" y="18" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="rMZ-vY-nfL">
+                                <rect key="frame" x="310" y="19" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -85,6 +84,9 @@
                             <constraint firstItem="9ZL-fG-Xd8" firstAttribute="top" secondItem="XZX-8c-INJ" secondAttribute="top" id="LUR-gW-s55"/>
                             <constraint firstItem="K4V-lE-kxl" firstAttribute="trailing" secondItem="cC3-jR-yts" secondAttribute="trailing" constant="-2" id="iii-Mv-TQQ"/>
                             <constraint firstItem="K4V-lE-kxl" firstAttribute="leading" secondItem="cC3-jR-yts" secondAttribute="leading" constant="2" id="tY1-ko-fvP"/>
+                            <constraint firstItem="cC3-jR-yts" firstAttribute="trailing" secondItem="rMZ-vY-nfL" secondAttribute="trailing" constant="45" id="tdM-yg-GkM"/>
+                            <constraint firstItem="K4V-lE-kxl" firstAttribute="top" secondItem="rMZ-vY-nfL" secondAttribute="bottom" constant="19" id="vdm-0y-VPZ"/>
+                            <constraint firstItem="rMZ-vY-nfL" firstAttribute="top" secondItem="XZX-8c-INJ" secondAttribute="top" constant="19" id="yHt-Qu-zQ1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cC3-jR-yts"/>
                     </view>

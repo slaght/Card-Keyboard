@@ -1,10 +1,8 @@
 //ISSUES:
 //crashes when keyboard is out sometimes?
-//when sideways, area next to notch is clear (happens with others)
-//weird dismiss behavior when sideways (happens with others)
+//cantfix - when sideways, area next to notch is clear (happens with others)
+//cantfix - weird dismiss behavior when sideways (happens with others)
 //images flicker when scrolled fast
-//no image for the app
-//no loading spinner in the main part when actually loading
 
 import UIKit
 import Messages
@@ -22,6 +20,7 @@ class MessagesViewController: MSMessagesAppViewController,  UICollectionViewData
     var allSets = [CardSet]()
     
     var searchActive = false
+    var allowAdjustForKeyboard = false
     
     override func viewDidLoad() {
         cardCollectionView.delegate = self
@@ -66,11 +65,8 @@ class MessagesViewController: MSMessagesAppViewController,  UICollectionViewData
         let name = SetSearchParameter(parameterType: .name, value: "")
         magic.fetchSets([name], completion: { (sets, error) in
             self.allSets = self.handleAPIData(error: error, sets: sets)
-            print(self.allSets)
             let currentSet = self.getMostRecentSet(sets: self.allSets)
-            print(currentSet)
             self.magic.generateBoosterForSet(currentSet, completion: { (cards, error) in
-                self.hideLoadingSpinnerAsync()
                 self.defaultCards = self.handleAPIData(error: error, cards: cards)
                 self.reloadTableAsync()
             })
@@ -84,9 +80,6 @@ class MessagesViewController: MSMessagesAppViewController,  UICollectionViewData
                 expansionSetsWithDates.append(set)
             }
         }
-        
-        print(expansionSetsWithDates)
-        
         if(expansionSetsWithDates.isEmpty) {
             return "KTK";
         }
@@ -144,6 +137,7 @@ class MessagesViewController: MSMessagesAppViewController,  UICollectionViewData
     func reloadTableAsync() {
         DispatchQueue.main.async {
             self.cardCollectionView.reloadData()
+            self.hideLoadingSpinnerAsync()
         }
     }
     
@@ -169,24 +163,22 @@ class MessagesViewController: MSMessagesAppViewController,  UICollectionViewData
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.becomeFirstResponder()
         requestPresentationStyle(.expanded)
+        allowAdjustForKeyboard = true
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         searchBar.endEditing(true)
-        //searchActive = false;
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         searchBar.endEditing(true)
-        //searchActive = false;
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         searchBar.endEditing(true)
-        //searchActive = false;
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -201,6 +193,11 @@ class MessagesViewController: MSMessagesAppViewController,  UICollectionViewData
     }
     
     @objc func adjustForKeyboard(notification: Notification) {
+        
+        if(!allowAdjustForKeyboard) {
+            return
+        }
+        
         // Step 1: Get the size of the keyboard.
         let keyboardSize = (notification.userInfo![UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue.size
         let toolbarSize = cardCollectionView.convert(cardCollectionView.bounds, to: nil)
@@ -212,6 +209,11 @@ class MessagesViewController: MSMessagesAppViewController,  UICollectionViewData
     }
     
     @objc func keyboardWillHide(notification: Notification) {
+        adjustInsetsForHiddenKeyboard()
+        allowAdjustForKeyboard = false
+    }
+    
+    func adjustInsetsForHiddenKeyboard() {
         let contentInsets = UIEdgeInsets.zero
         cardCollectionView.contentInset = contentInsets
         cardCollectionView.scrollIndicatorInsets = contentInsets
@@ -225,7 +227,6 @@ class MessagesViewController: MSMessagesAppViewController,  UICollectionViewData
         showLoadingSpinner()
         let name = CardSearchParameter(parameterType: .name, value: query)
         magic.fetchCards([name]) { cards, error in
-            self.hideLoadingSpinnerAsync()
             if(query == self.searchBar.text!) {
                 self.filteredCards = self.handleAPIData(error: error, cards: cards)
                 self.reloadTableAsync()

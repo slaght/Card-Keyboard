@@ -63,10 +63,6 @@ class CardViewCell: UICollectionViewCell {
                                   options: .transitionCrossDissolve,
                                   animations: { self.imageView.image = UIImage(data: data!) },
                                   completion: nil)
-                
-//                UIView.animate(withDuration: 0.5, animations: {
-//                    self.imageView.image = UIImage(data: data!)
-//                })
             }
         }.resume()
     }
