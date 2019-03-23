@@ -15,8 +15,8 @@
 		C583D164206C4FAB006D61DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C583D163206C4FAB006D61DC /* Assets.xcassets */; };
 		C583D170206C69F0006D61DC /* MTGSDKSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C583D16F206C69F0006D61DC /* MTGSDKSwift.framework */; };
 		C583D174206C7037006D61DC /* CardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C583D173206C7037006D61DC /* CardViewCell.swift */; };
-		C583D176206C7FE4006D61DC /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C583D175206C7FE4006D61DC /* WaterfallLayout.swift */; };
 		C5B57C9E2237F787003FE336 /* MTGSDKSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C583D16F206C69F0006D61DC /* MTGSDKSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C5EA21302246A56F0030DFE7 /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EA212F2246A56F0030DFE7 /* WaterfallLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +74,7 @@
 		C583D165206C4FAB006D61DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C583D16F206C69F0006D61DC /* MTGSDKSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MTGSDKSwift.framework; path = Carthage/Build/iOS/MTGSDKSwift.framework; sourceTree = "<group>"; };
 		C583D173206C7037006D61DC /* CardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewCell.swift; sourceTree = "<group>"; };
-		C583D175206C7FE4006D61DC /* WaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WaterfallLayout.swift; path = "../../../Orbits/Occupy Mars/WaterfallLayout.swift"; sourceTree = "<group>"; };
+		C5EA212F2246A56F0030DFE7 /* WaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterfallLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,9 +130,9 @@
 		C583D15D206C4FAB006D61DC /* Card Keyboard MessagesExtension */ = {
 			isa = PBXGroup;
 			children = (
+				C5EA212F2246A56F0030DFE7 /* WaterfallLayout.swift */,
 				C583D15E206C4FAB006D61DC /* MessagesViewController.swift */,
 				C583D173206C7037006D61DC /* CardViewCell.swift */,
-				C583D175206C7FE4006D61DC /* WaterfallLayout.swift */,
 				C583D160206C4FAB006D61DC /* MainInterface.storyboard */,
 				C583D163206C4FAB006D61DC /* Assets.xcassets */,
 				C583D165206C4FAB006D61DC /* Info.plist */,
@@ -306,7 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C583D174206C7037006D61DC /* CardViewCell.swift in Sources */,
-				C583D176206C7FE4006D61DC /* WaterfallLayout.swift in Sources */,
+				C5EA21302246A56F0030DFE7 /* WaterfallLayout.swift in Sources */,
 				C583D15F206C4FAB006D61DC /* MessagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
