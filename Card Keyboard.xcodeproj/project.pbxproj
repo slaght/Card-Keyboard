@@ -13,10 +13,10 @@
 		C583D15F206C4FAB006D61DC /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C583D15E206C4FAB006D61DC /* MessagesViewController.swift */; };
 		C583D162206C4FAB006D61DC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C583D160206C4FAB006D61DC /* MainInterface.storyboard */; };
 		C583D164206C4FAB006D61DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C583D163206C4FAB006D61DC /* Assets.xcassets */; };
-		C583D170206C69F0006D61DC /* MTGSDKSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C583D16F206C69F0006D61DC /* MTGSDKSwift.framework */; };
 		C583D174206C7037006D61DC /* CardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C583D173206C7037006D61DC /* CardViewCell.swift */; };
-		C5B57C9E2237F787003FE336 /* MTGSDKSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C583D16F206C69F0006D61DC /* MTGSDKSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C5EA21302246A56F0030DFE7 /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EA212F2246A56F0030DFE7 /* WaterfallLayout.swift */; };
+		C5EA21342246B5D40030DFE7 /* MTGSDKSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5EA21312246B49F0030DFE7 /* MTGSDKSwift.framework */; };
+		C5EA21352246B72C0030DFE7 /* MTGSDKSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C5EA21312246B49F0030DFE7 /* MTGSDKSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +56,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C5B57C9E2237F787003FE336 /* MTGSDKSwift.framework in CopyFiles */,
+				C5EA21352246B72C0030DFE7 /* MTGSDKSwift.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,9 +72,9 @@
 		C583D161206C4FAB006D61DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		C583D163206C4FAB006D61DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C583D165206C4FAB006D61DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C583D16F206C69F0006D61DC /* MTGSDKSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MTGSDKSwift.framework; path = Carthage/Build/iOS/MTGSDKSwift.framework; sourceTree = "<group>"; };
 		C583D173206C7037006D61DC /* CardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewCell.swift; sourceTree = "<group>"; };
 		C5EA212F2246A56F0030DFE7 /* WaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterfallLayout.swift; sourceTree = "<group>"; };
+		C5EA21312246B49F0030DFE7 /* MTGSDKSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MTGSDKSwift.framework; path = Carthage/Build/iOS/MTGSDKSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C583D170206C69F0006D61DC /* MTGSDKSwift.framework in Frameworks */,
+				C5EA21342246B5D40030DFE7 /* MTGSDKSwift.framework in Frameworks */,
 				C583D15C206C4FAB006D61DC /* Messages.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,7 +121,7 @@
 		C583D15A206C4FAB006D61DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C583D16F206C69F0006D61DC /* MTGSDKSwift.framework */,
+				C5EA21312246B49F0030DFE7 /* MTGSDKSwift.framework */,
 				C583D15B206C4FAB006D61DC /* Messages.framework */,
 			);
 			name = Frameworks;
