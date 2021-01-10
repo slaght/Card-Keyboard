@@ -7,3 +7,9 @@
 iMessage app for MTG cards.
 
 Compilation for launch is still in progress.
+
+## Libraries used:
+
+[CHTCollectionViewWaterfallLayout](https://github.com/chiahsien/CHTCollectionViewWaterfallLayout "Link to repo")  
+[mtg-sdk-swift](https://github.com/MagicTheGathering/mtg-sdk-swift "Link to repo")  
+
